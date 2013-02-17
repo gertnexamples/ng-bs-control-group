@@ -1,0 +1,31 @@
+<form name="formSignIn" class="form-signin">
+    <h2 class="form-signin-heading">{{labels.please_sign_in}}</h2>
+    <control-group for-attr="username" label="labels.username" valid="formSignIn.username.$valid">
+        <input type="text" class="input-large" name="username" id="username" ng-model="user.username"
+               required ng-minlength="6" ng-maxlength="10">
+        <span class="help-inline" ng-show="!formSignIn.username.$valid">{{labels.error_username}}</span>
+    </control-group>
+    <!--<div class="control-group">
+      <label class="control-label" for="username">{{labels.username}}</label>
+      <div class="controls">
+        <input type="text" class="input-large" name="username" id="username" ng-model="user.username"
+          required ng-minlength="6" ng-maxlength="10">
+        <span class="help-inline" ng-show="!formSignIn.username.$valid">{{labels.error_username}}</span>
+      </div>
+    </div>-->
+    <div class="control-group">
+        <label class="control-label" for="password">{{labels.password}}</label>
+
+        <div class="controls">
+            <input type="password" class="input-large" name="password" id="password"
+                   ng-model="user.password" required ng-minlength="8" ng-maxlength="12">
+            <span class="help-inline" ng-show="!formSignIn.password.$valid">{{labels.error_password}}</span>
+        </div>
+    </div>
+    <div class="form-actions">
+        <button id="save" type="submit" ng-disabled="!formSignIn.$valid" ng-click="signIn()"
+                class="btn btn-primary">{{labels.sign_in}}
+        </button>
+        <button id="cancel" type="button" ng-click="cancel()" class="btn">{{labels.cancel}}</button>
+    </div>
+</form>

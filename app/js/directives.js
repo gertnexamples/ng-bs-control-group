@@ -1,11 +1,22 @@
 'use strict';
 
-/* Directives */
+var directives = angular.module('myApp.directives', []);
 
+directives.directive('controlGroup', function () {
+    var controlGroup = {
+        restrict:'E',
+        replace:true,
+        transclude:true,
+        templateUrl:'controlGroup.html',
+        scope:{
+            forAttr:'@',
+            label:'=',
+            valid:'='
+        },
+        link:function (scope, element, attr) {
+        }
 
-angular.module('myApp.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
     };
-  }]);
+    return controlGroup;
+});
+
