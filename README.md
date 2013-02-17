@@ -1,4 +1,4 @@
-# ng-bs-control-group — AngularJS - Twitter Bootstrap - Control group directives
+#AngularJS - Twitter Bootstrap - Control group directives
 This app will show you how to create Control group directives for Twitter Bootstrap.
 
 ## controlGroup Element directive
