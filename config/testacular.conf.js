@@ -1,16 +1,22 @@
-basePath = '../';
+basePath = '../app';
 
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'app/lib/angular/angular.js',
-  'app/lib/angular/angular-*.js',
-  'test/lib/angular/angular-mocks.js',
-  'app/js/**/*.js',
-  'test/unit/**/*.js'
+  'lib/angular/angular.js',
+  'lib/angular/angular-*.js',
+  '../test/lib/angular/angular-mocks.js',
+  'js/**/*.js',
+  'templates/**/*.html',
+  '../test/unit/**/*.js'
 ];
 
-autoWatch = true;
+// generate js files from html templates
+preprocessors = {
+    '**/*.html': 'html2js'
+};
+
+autoWatch = false;
 
 browsers = ['Chrome'];
 

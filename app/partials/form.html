@@ -1,6 +1,6 @@
 <form name="formSignIn" class="form-signin">
     <h2 class="form-signin-heading">{{labels.please_sign_in}}</h2>
-    <control-group for-attr="username" label="labels.username" valid="formSignIn.username.$valid">
+    <control-group for-attr="username" label="labels.username">
         <input type="text" class="input-large" name="username" id="username" ng-model="user.username"
                required ng-minlength="6" ng-maxlength="10">
         <span class="help-inline" ng-show="!formSignIn.username.$valid">{{labels.error_username}}</span>
@@ -13,7 +13,12 @@
         <span class="help-inline" ng-show="!formSignIn.username.$valid">{{labels.error_username}}</span>
       </div>
     </div>-->
-    <div class="control-group">
+    <input type="password" class="input-large" name="password" id="password"
+           ng-model="$parent.user.password" required ng-minlength="8" ng-maxlength="12"
+           help-label="labels.error_password" bs-control-group
+           label="labels.password"
+           show-help="!formSignIn.password.$valid">
+    <!--<div class="control-group">
         <label class="control-label" for="password">{{labels.password}}</label>
 
         <div class="controls">
@@ -21,7 +26,7 @@
                    ng-model="user.password" required ng-minlength="8" ng-maxlength="12">
             <span class="help-inline" ng-show="!formSignIn.password.$valid">{{labels.error_password}}</span>
         </div>
-    </div>
+    </div>-->
     <div class="form-actions">
         <button id="save" type="submit" ng-disabled="!formSignIn.$valid" ng-click="signIn()"
                 class="btn btn-primary">{{labels.sign_in}}
