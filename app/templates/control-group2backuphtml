@@ -1,6 +1,0 @@
-<!-- waiting on pull request https://github.com/testacular/testacular-ng-html2js-preprocessor/pull/1 Added windows line break removal to html2js preprocessor-->
-<div class="control-group">
-    <label class="control-label" for="{{forAttr}}" ng-bind="label">{{label}}</label>
-    <div class="controls" ng-transclude>
-    </div>
-</div>

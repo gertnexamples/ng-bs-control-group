@@ -9,37 +9,32 @@ describe('my app', function() {
   });
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    expect(browser().location().url()).toBe("/view1");
+  it('should automatically redirect to /form when location hash/fragment is empty', function() {
+    expect(browser().location().url()).toBe("/form");
   });
 
 
-  describe('view1', function() {
+  describe('form', function() {
 
     beforeEach(function() {
-      browser().navigateTo('#/view1');
+      browser().navigateTo('#/form');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element('[ng-view] p:first').text()).
-        toMatch(/partial for view 1/);
-    });
+    it('should bind models of directives', function() {
+        expect(element('#signedIn ul li:first').text()).toEqual('');
+        expect(element('#signedIn ul li:eq(1)').text()).toEqual('');
 
-  });
+        input('user.username').enter("123456");
+        input('$parent.user.password').enter("12345678");
 
+        element("#save").click();
 
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element('[ng-view] p:first').text()).
-        toMatch(/partial for view 2/);
+        expect(element('#signedIn ul li:first').text()).toEqual('123456');
+        expect(element('#signedIn ul li:eq(1)').text()).toEqual('12345678');
     });
 
   });
+
+
 });

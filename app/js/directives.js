@@ -23,7 +23,7 @@ directives.directive('bsControlGroup', function ($compile) {
     var tplControlGroup = $compile('<div class="control-group"></div>'),
         tplControls = $compile('<div class="controls"></div>'),
         tplLabel = $compile('<label class="control-label" for="{{name}}" ng-bind="label">{{label}}</label>'),
-        tplHelp = $compile('<span class="help-inline" ng-show="showHelp">{{helpLabel}}</span>')
+        tplHelp = $compile('<span class="help-inline" ng-show="showHelp">{{helpLabel}}</span>');
 
     var controlGroup = {
         restrict:'A',
@@ -40,10 +40,11 @@ directives.directive('bsControlGroup', function ($compile) {
                 labelEl = tplLabel(scope),
                 helpEL = tplHelp(scope);
 
+
+            var elm = element.wrap(controlGroupEl);
             element.wrap(controlsEl);
-            controlsEl.wrap(controlGroupEl);
-            controlGroupEl.prepend(labelEl);
-            controlsEl.append(helpEL);
+            element.after(helpEL);
+            element.parents('.control-group').prepend(labelEl);
         }
 
     };
