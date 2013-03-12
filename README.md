@@ -56,11 +56,13 @@ Example:
 Requires node.js, Testacular (npm install -g testacular) and a local or remote browser.
 
 start scripts/test.sh (on windows: scripts\test.bat)
-a browser will start and connect to the Testacular server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the config/testacular.conf.js file)
-to run or re-run tests open another commandline
+a browser will start and connect to the Testacular server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the config/testacular.conf.js file).
+To run or re-run tests open another commandline
  ```
  testacular run
  ```
+
+You can also run your test inside Webstorm, see [Run testacular tests inside Webstrom](http://angularjs-how-to.blogspot.be/2013/02/run-testacular-inside-webstrom-gert.html) for more details.
 
 ## End to end testing
 
