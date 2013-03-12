@@ -64,6 +64,15 @@ To run or re-run tests open another commandline
 
 You can also run your test inside Webstorm, see [Run testacular tests inside Webstrom](http://angularjs-how-to.blogspot.be/2013/02/run-testacular-inside-webstrom-gert.html) for more details.
 
+At the moment if you want to run the tests on windows you need to patch the testacular-ng-html2js-preprocessor => html2js.js file in the lib/preprocessors folder of testacular.
+
+```
+  var escapeContent = function(content) {
+ -  return content.replace(/'/g, '\\\'').replace(/\n/g, '\\n\' +\n    \'');
+ +  return content.replace(/'/g, '\\\'').replace(/\r?\n/g, '\\n\' +\n    \'');
+  };
+ ```
+
 ## End to end testing
 
 Angular ships with a baked-in end-to-end test runner that understands angular, your app and allows you to write your tests with jasmine-like BDD syntax.
