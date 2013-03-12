@@ -49,3 +49,35 @@ Example:
      </div>
   </div>
   ```
+
+
+## Running unit tests
+
+Requires node.js, Testacular (npm install -g testacular) and a local or remote browser.
+
+start scripts/test.sh (on windows: scripts\test.bat)
+a browser will start and connect to the Testacular server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the config/testacular.conf.js file)
+to run or re-run tests open another commandline
+ ```
+ testacular run
+ ```
+
+## End to end testing
+
+Angular ships with a baked-in end-to-end test runner that understands angular, your app and allows you to write your tests with jasmine-like BDD syntax.
+
+Requires a webserver, node.js + ./scripts/web-server.js or your backend server that hosts the angular static files.
+
+Check out the end-to-end runner's documentation for more info.
+
+to run do one of:
+open http://localhost:8000/test/e2e/runner.html in your browser
+run the tests from console with Testacular via scripts/e2e-test.sh or script/e2e-test.bat
+
+## Running the example app
+
+install node.js and run from commandline in root of project
+ ```
+ node scripts/web-server.js
+   ```
+Then navigate your browser to http://localhost:8000/app/index.html to see the app running in your browser.
