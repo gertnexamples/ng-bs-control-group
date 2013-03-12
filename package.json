@@ -1,0 +1,11 @@
+{
+  "name": "ng-bs-control-group",
+  "version": "0.2.0",
+  "description": "Twitter Bootstrap - Control group directives",
+  "dependencies": {
+    "testacular": "~0.6.0"
+  },
+  "author": "nuyensgert",
+  "license": "MIT License, http://www.opensource.org/licenses/MIT",
+  "homepage": "https://github.com/gertnexamples/ng-bs-control-group"
+}
