@@ -8,7 +8,7 @@ describe('directives', function () {
     describe('controlGroup directive', function () {
         var elm, labels = {};
         labels.username = 'Username';
-        //this will load the template as a generated js file see also testacular.conf.js 'html2js' preprocessors
+        //this will load the template as a generated js file see also karma.conf.js 'html2js' preprocessors
         beforeEach(module('templates/control-group.html'));
         beforeEach(inject(function ($rootScope, $compile) {
             $rootScope.labels = labels;

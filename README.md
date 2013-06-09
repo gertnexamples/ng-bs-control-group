@@ -53,18 +53,18 @@ Example:
 
 ## Running unit tests
 
-Requires node.js, Testacular (npm install -g testacular) and a local or remote browser.
+Requires node.js, Karma (npm install -g karma) and a local or remote browser.
 
 start scripts/test.sh (on windows: scripts\test.bat)
-a browser will start and connect to the Testacular server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the config/testacular.conf.js file).
+a browser will start and connect to the Karma server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the config/karma.conf.js file).
 To run or re-run tests open another commandline
  ```
- testacular run
+ karma run
  ```
 
 You can also run your test inside Webstorm, see [Run testacular tests inside Webstrom](http://angularjs-how-to.blogspot.be/2013/02/run-testacular-inside-webstrom-gert.html) for more details.
 
-At the moment if you want to run the tests on windows you need to patch the testacular-ng-html2js-preprocessor => html2js.js file in the lib/preprocessors folder of testacular.
+At the moment if you want to run the tests on windows you need to patch the karma-ng-html2js-preprocessor => html2js.js file in the lib/preprocessors folder of karma.
 
 ```
   var escapeContent = function(content) {
@@ -83,7 +83,7 @@ Check out the end-to-end runner's documentation for more info.
 
 to run do one of:
 open http://localhost:8000/test/e2e/runner.html in your browser
-run the tests from console with Testacular via scripts/e2e-test.sh or script/e2e-test.bat
+run the tests from console with Karma via scripts/e2e-test.sh or script/e2e-test.bat
 
 ## Running the example app
 
