@@ -1,27 +1,46 @@
-basePath = '../app';
+module.exports = function (config) {
+    config.set({
+        basePath: '../app',
 
-files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  'lib/vendor/jquery-1.9.1.js',
-  'lib/angular/angular.js',
-  'lib/angular/angular-*.js',
-  '../test/lib/angular/angular-mocks.js',
-  'js/**/*.js',
-  'templates/**/*.html',
-  '../test/unit/**/*.js'
-];
+        // generate js files from html templates
+        preprocessors: {
+            '**/*.html': ['ng-html2js']
+        },
 
-// generate js files from html templates
-preprocessors = {
-    '**/*.html': 'html2js'
-};
+        files: [
+             'lib/vendor/jquery-1.9.1.js',
+            'lib/angular/angular.js',
+            'lib/angular/angular-*.js',
+            '../test/lib/angular/angular-mocks.js',
+            'js/**/*.js',
+            'templates/**/*.html',
+            '../test/unit/**/*.js'
+        ],
 
-autoWatch = false;
+        exclude: [
+            'lib/angular/angular-loader.js',
+            'lib/angular/*.min.js',
+            'lib/angular/angular-scenario.js'
+        ],
 
-browsers = ['Chrome'];
+        autoWatch: true,
 
-junitReporter = {
-  outputFile: 'test_out/unit.xml',
-  suite: 'unit'
-};
+        frameworks: ['jasmine'],
+
+        browsers: ['Chrome'],
+
+        plugins: [
+            'karma-junit-reporter',
+            'karma-chrome-launcher',
+            'karma-firefox-launcher',
+            'karma-ng-html2js-preprocessor',
+            'karma-jasmine'
+        ],
+
+        junitReporter: {
+            outputFile: 'test_out/unit.xml',
+            suite: 'unit'
+        }
+
+    })
+}

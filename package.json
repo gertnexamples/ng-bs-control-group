@@ -2,8 +2,13 @@
   "name": "ng-bs-control-group",
   "version": "0.2.0",
   "description": "Twitter Bootstrap - Control group directives",
-  "dependencies": {
-    "karma": "~0.8.5"
+  "devDependencies": {
+    "phantomjs": "~1.9",
+    "karma": "~0.10",
+    "karma-junit-reporter": "~0.2.1",
+    "karma-jasmine": "~0.1.5",
+    "karma-ng-scenario": "~0.1.0",
+    "karma-ng-html2js-preprocessor": "~0.1.0"
   },
   "author": "nuyensgert",
   "license": "MIT License, http://www.opensource.org/licenses/MIT",

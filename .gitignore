@@ -7,3 +7,10 @@ node_modules
 .project
 .settings
 .idea/*
+!.idea/runConfigurations/
+
+projectFilesBackup
+
+*.iml
+*.ipr
+*.iws

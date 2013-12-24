@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Karma e2e" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="$PROJECT_DIR$/config/karma-e2e.conf.js">
+    <envs />
+    <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerRun" />
+    <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerRun" />
+    <method />
+  </configuration>
+</component>
